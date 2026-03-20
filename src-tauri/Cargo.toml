@@ -1,0 +1,22 @@
+[package]
+name = "component-price-tool"
+version = "2.0.0"
+description = "元器件比价工具 - 基于Tauri 2.0"
+authors = ["大Y"]
+license = "MIT"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-beta", features = [] }
+
+[dependencies]
+tauri = { version = "2.0.0-beta", features = ["dialog-all", "fs-all", "http-all", "shell-open"] }
+tauri-plugin-shell = "2.0.0-beta"
+tauri-plugin-dialog = "2.0.0-beta"
+tauri-plugin-fs = "2.0.0-beta"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
